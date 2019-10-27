@@ -26,3 +26,18 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
+  redis: 
+    image: 'redis'
+    container_name: database
+    expose:
+      - 6379
+  node:
+    build: 
+      context: ./ms-node
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    links:
+      - redis
+    environment:
+    - REDIS_URL=redis://database

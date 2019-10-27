@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "start-dev": "nodemon app.js",
     "test": "newman run ./test/token-service-test.postman_collection.json --ignore-redirects"
   },
@@ -17,6 +18,8 @@
   },
   "devDependencies": {
     "newman": "^4.5.4",
-    "nodemon": "^1.19.0"
+    "express": "*",
+    "redis": "2.8.0",
+    "nodemon": "^1.19.1"
   }
 }
