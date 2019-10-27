@@ -1,0 +1,22 @@
+{
+  "name": "jwt-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "nodemon app.js",
+    "test": "newman run ./test/token-service-test.postman_collection.json --ignore-redirects"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "newman": "^4.5.4",
+    "nodemon": "^1.19.0"
+  }
+}
