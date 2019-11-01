@@ -1,0 +1,15 @@
+FROM node:alpine
+
+LABEL maintainer="mc222sn@student.lnu.se"
+LABEL version="1.0"
+LABEL description="API gateway built with node"
+
+ENV INSTALL_PATH /var/www/app
+RUN mkdir -p $INSTALL_PATH
+WORKDIR $INSTALL_PATH
+
+COPY package*.json ./
+RUN npm install --quite
+COPY . .
+
+CMD ["npm", "run", "start"]

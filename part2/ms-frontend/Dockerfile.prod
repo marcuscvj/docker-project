@@ -1,0 +1,7 @@
+FROM nginx
+
+LABEL maintainer="mc222sn@student.lnu.se"
+LABEL version="1.0"
+LABEL description="NGINX server"
+
+COPY ./src /usr/share/nginx/html
