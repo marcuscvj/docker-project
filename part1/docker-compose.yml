@@ -4,40 +4,50 @@ services:
     build:
       context: ./ms-frontend
       dockerfile: Dockerfile
+    volumes:
+      - ./ms-frontend:/src/app
     ports:
       - "80:80"
   apigateway:
-    build: 
+    build:
       context: ./ms-apigateway
       dockerfile: Dockerfile
+    volumes:
+      - ./ms-apigateway:/src/app
     ports:
       - "5000:5000"
     env_file:
       - ./ms-apigateway/.env
   flask:
-    build: 
+    build:
       context: ./ms-flask
       dockerfile: Dockerfile
+    volumes:
+      - ./ms-flask:/src/app
     ports:
       - "6000:6000"
   go:
-    build: 
+    build:
       context: ./ms-go
       dockerfile: Dockerfile
+    volumes:
+      - ./ms-go:/src/app
     ports:
       - "8080:8080"
-  redis: 
+  redis:
     image: 'redis'
     container_name: database
     expose:
       - 6379
   node:
-    build: 
+    build:
       context: ./ms-node
       dockerfile: Dockerfile
+    volumes:
+      - ./ms-node:/src/app
     ports:
       - "4000:4000"
     links:
       - redis
     environment:
-    - REDIS_URL=redis://database
+      - REDIS_URL=redis://database

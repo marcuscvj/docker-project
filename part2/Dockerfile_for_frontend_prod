@@ -1,4 +1,0 @@
-FROM nginx
-MAINTAINER Marcus Cvjeticanin "mc222sn@student.lnu.se"
-
-COPY ./src /usr/share/nginx/html
