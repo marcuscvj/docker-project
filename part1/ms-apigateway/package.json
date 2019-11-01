@@ -4,8 +4,8 @@
   "description": "Simple api gateway",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "start-dev": "nodemon app.js",
+    "start": "node ./app.js",
+    "start-dev": "nodemon ./app.js",
     "test": "mocha --recursive ./tests"
   },
   "keywords": [],

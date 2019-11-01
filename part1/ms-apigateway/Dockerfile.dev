@@ -8,4 +8,4 @@ COPY package*.json ./
 RUN npm install --quite
 COPY . .
 
-CMD ["npm", "start-dev"]
+CMD ["npm", "run", "start-dev"]
