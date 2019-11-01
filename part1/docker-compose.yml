@@ -1,9 +1,10 @@
 version: '3'
+
 services:
   frontend:
     build:
       context: ./ms-frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ./ms-frontend:/src/app
     ports:
@@ -11,7 +12,7 @@ services:
   apigateway:
     build:
       context: ./ms-apigateway
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ./ms-apigateway:/src/app
     ports:
@@ -21,7 +22,7 @@ services:
   flask:
     build:
       context: ./ms-flask
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ./ms-flask:/src/app
     ports:
@@ -29,7 +30,7 @@ services:
   go:
     build:
       context: ./ms-go
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ./ms-go:/src/app
     ports:
@@ -42,7 +43,7 @@ services:
   node:
     build:
       context: ./ms-node
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     volumes:
       - ./ms-node:/src/app
     ports:
