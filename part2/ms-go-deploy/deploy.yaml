@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: go
+  name: go-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: go
+  template:
+    metadata:
+      labels:
+        name: go
+    spec:
+      containers:
+      - image: mjovanc/ms-go:1.0
+        name: go
+        ports:
+        - containerPort: 8080

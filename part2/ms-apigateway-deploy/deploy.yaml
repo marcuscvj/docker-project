@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: apigateway
+  name: apigateway-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: apigateway
+  template:
+    metadata:
+      labels:
+        name: apigateway
+    spec:
+      containers:
+      - image: mjovanc/ms-apigateway:1.0
+        name: apigateway
+        ports:
+        - containerPort: 5000
+        env:
+        - name: FLASK_ENDPOINT
+          value: "http://flask"
+        - name: GO_ENDPOINT
+          value: "http://go"
+        - name: NODE_ENDPOINT
+          value: "http://node"

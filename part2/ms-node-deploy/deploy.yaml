@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: node
+  name: node-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: node
+      app: node-deployment
+  template:
+    metadata:
+      labels:
+        name: node
+        app: node-deployment
+    spec:
+      containers:
+      - image: mjovanc/ms-node:1.0
+        name: node
+        ports:
+        - containerPort: 4000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: REDIS_URL
+          value: "redis://redis:6379"
