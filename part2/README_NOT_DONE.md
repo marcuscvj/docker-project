@@ -1,5 +1,5 @@
-# Run project
+# Visit Site
 
-To build images and run the project in development run this command:
+To visit the site, go to URL:
 
-`docker-compose up`
+`http://cscloud440.lnu.se/`
